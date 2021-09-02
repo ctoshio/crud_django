@@ -26,7 +26,7 @@ def crearPersona(request):
             return redirect('index') #import redirect & from url.py name index
     return render(request, 'create_persona.html', contexto)
 
-def editarPersona(request,id):
+def editarPersona(request, id):
     persona = Persona.objects.get(id = id) #select id from Persona
     if request.method == 'GET':
         form = PersonaForm(instance = persona) #isntance save information from persona
@@ -42,5 +42,10 @@ def editarPersona(request,id):
             form.save()
             return redirect('index')
     return render(request, 'create_persona.html', contexto)
+
+def eliminarPersona(request, id):
+    persona = Persona.objects.get(id = id)
+    persona.delete() #delete this person from database
+    return redirect('index')
 
 
