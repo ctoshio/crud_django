@@ -20,5 +20,5 @@ from aplicaciones.principal.views import crearPersona, inicio
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',inicio,name = 'index'),
-    path('create_persona/',crearPersona,name = 'crear_persona')
+    path('create_persona/',crearPersona,name = 'create_persona')#name could be any name
 ]

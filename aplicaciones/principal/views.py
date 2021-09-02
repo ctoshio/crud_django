@@ -11,9 +11,16 @@ def inicio(request):
     return render(request, 'index.html',contexto)
 
 def crearPersona(request):
-    form = PersonaForm()
-    contexto = {
-        'form':form
-    }
+    if request.method == 'GET':
+        form = PersonaForm()
+        contexto = {
+            'form':form
+        }
+    else:
+        form = PersonaForm(request.POST)
+        contexto = {
+            'form':form
+        }
+        print(form)
     return render(request, 'create_persona.html', contexto)
 
