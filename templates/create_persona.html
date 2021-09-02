@@ -1,1 +1,10 @@
 {% extends 'index.html' %}
+{% block titulo %}Formulario de Contacto{% endblock titulo %}
+{% block cuerpo %}
+
+<form action="post">
+    {{ form.as_p }} <!--.as_p to put field down -->
+    <button type="submit">CREAR</button>
+</form>
+
+{% endblock cuerpo %}
