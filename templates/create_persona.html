@@ -5,7 +5,7 @@
 <form method="post">
     {% csrf_token %} <!-- to validate user token -->
     {{ form.as_p }} <!--.as_p to put field down -->
-    <button type="submit">CREAR</button>
+    <button type="submit">CREAR o EDITAR</button>
 </form>
 
 {% endblock cuerpo %}
