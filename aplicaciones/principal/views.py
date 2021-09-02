@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Persona
 from .forms import PersonaForm
 
@@ -21,6 +21,8 @@ def crearPersona(request):
         contexto = {
             'form':form
         }
-        print(form)
+        if form.is_valid():
+            form.save()
+            return redirect('index') #import redirect & from url.py name index
     return render(request, 'create_persona.html', contexto)
 
