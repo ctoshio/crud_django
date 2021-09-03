@@ -39,6 +39,4 @@ class PersonaList(ListView):
     model = Persona
     template_name = 'index.html'
 
-    def get_queryset(self):
-        return self.model.objects.all()[:2]
         
