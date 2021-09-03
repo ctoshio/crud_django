@@ -44,4 +44,10 @@ class PersonaCreate(CreateView):
     model = Persona
     form_class = PersonaForm 
     template_name = 'create_persona.html'
-    success_url = reverse_lazy('index')       
+    success_url = reverse_lazy('index')   
+
+class PersonaUpdate(UpdateView):
+    model = Persona
+    form_class = PersonaForm 
+    template_name = 'create_persona.html'
+    success_url = reverse_lazy('index')    
