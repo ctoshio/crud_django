@@ -50,4 +50,9 @@ class PersonaUpdate(UpdateView):
     model = Persona
     form_class = PersonaForm 
     template_name = 'create_persona.html'
-    success_url = reverse_lazy('index')    
+    success_url = reverse_lazy('index')   
+
+class PersonaDelete(DeleteView):
+    model = Persona
+    template_name = 'verification.html'
+    success_url = reverse_lazy('index')   
